@@ -1,6 +1,7 @@
 import faker from 'faker';
+import { Mappable } from './Map';
 
-export class User {
+export class User implements Mappable {
     name: string;
     location: {
         lat: number;
@@ -13,7 +14,10 @@ export class User {
             //Using parseFloat to convert string into decimal
             lat: parseFloat(faker.address.latitude()),
             lng: parseFloat(faker.address.longitude())
-        }
+        };
     };
-
+    //A content we'll use in creting marker
+    markerInfo():string {
+        return `User Name: ${this.name}`
+    }
 }

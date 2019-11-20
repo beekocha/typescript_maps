@@ -4,7 +4,8 @@ import { Map } from './Map';
 
 const user = new User;
 const company = new Company;
-new Map('map');
+let customMap = new Map('map');
 
-// console.log(user);
-// console.log(company);
+customMap.addMarker(user);
+customMap.addMarker(company);
+
